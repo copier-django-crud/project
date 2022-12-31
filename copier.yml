@@ -2,6 +2,16 @@ project_name:
     type: str
     help: What is your project name?
 
+wsgi:
+    type: bool
+    help: Do you want to use WSGI (sync)?
+    default: yes
+
+asgi:
+    type: bool
+    help: Do you want to use ASGI (async)?
+    default: no
+
 database:
     type: str
     choices:
