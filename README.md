@@ -20,9 +20,15 @@ Create `backend` directory and generate Django project `mysite` into it:
         create  mysite/settings.py
         create  manage.py
 
-Run the Django development server:
+Run the Django development server and visit the site `http://127.0.0.1:8000`:
 
     cd backend
     python3 -m venv venv && source venv/bin/activate && pip install django
     python manage.py migrate
+    python manage.py runserver
+
+Create admin user and log into `http://127.0.0.1:8000/admin`:
+
+    cd backend
+    python manage.py createsuperuser
     python manage.py runserver
