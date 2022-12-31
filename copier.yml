@@ -20,6 +20,35 @@ database:
         - other
     help: What default database do you want to use?
 
+database_name:
+    when: "{{ database == 'mysql' }}"
+    type: str
+    help: What name for default database do you want to use?
+
+database_user:
+    when: "{{ database == 'mysql' }}"
+    type: str
+    help: What user for default database do you want to use?
+
+database_password:
+    when: "{{ database == 'mysql' }}"
+    type: str
+    help: What password for default database do you want to use?
+
+database_charset:
+    when: "{{ database == 'mysql' }}"
+    type: str
+    choices:
+        - ucs2
+        - utf8
+        - utf8mb3
+        - utf8mb4
+        - utf16
+        - utf16le
+        - utf32
+    default: utf8
+    help: What character set for default database do you want to use?
+
 _exclude:
     - ".git"
     - "copier.yml"
