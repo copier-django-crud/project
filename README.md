@@ -32,3 +32,10 @@ Create admin user and log into `http://127.0.0.1:8000/admin`:
     cd backend
     python manage.py createsuperuser
     python manage.py runserver
+
+## Customization
+
+    🎤 What default database do you want to use?
+    mysql
+
+Configure the database connection in `my.cnf` file.
