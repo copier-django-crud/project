@@ -24,4 +24,5 @@ Run the Django development server:
 
     cd backend
     python3 -m venv venv && source venv/bin/activate && pip install django
+    python manage.py migrate
     python manage.py runserver
