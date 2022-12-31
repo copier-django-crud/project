@@ -74,10 +74,25 @@ WSGI_APPLICATION = '{{project_name}}.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    {% if database == 'sqlite' -%}
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+    {%- elif database == 'mysql' -%}
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '../my.cnf',
+        },
+    }
+    {%- elif database == 'other' %}
+    # TODO: configure default database
+    'default': {
+        'ENGINE': '',
+    }
+    {%- else -%}
+    {%- endif %}
 }
 
 
